@@ -6,300 +6,186 @@
     <title>Mon Site Professionnel - Structure Complète</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <title>A3P 2025/2026 space adventure</title>
+    
+    <style>
+       body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+        header {
+            border-bottom: 3px solid #2c3e50;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+        }
+        h1 {
+	color: #2c3e50;
+	}
+        h2 {
+	color: #2980b9; border-left: 5px solid #2980b9; padding-left: 10px; margin-top: 30px;
+	}
+        .section-content {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        } /*c'est comme une fonction qu'on pourra rappeler plus tard pour réutiliser le style du site*/
+        .meta-info {
+		font-style: Tahoma, Geneva, Verdana, sans-serif; color: #7f8c8d;
+	}
+	button {
+    		padding: 10px 20px;
+            	border: none;
+            	cursor: pointer;
+            	font-weight: bold;
+            	margin: 5px;
+            	transition: 0.3s;
+            	color: white;
+            	border-radius: 4px;
+            	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+	}
+
+	button:hover {
+	    opacity: 0.8; /* Le bouton devient un peu transparent quand on passe la souris dessus */
+	}
+	.button-gagné { background: rgb(28, 184, 65); }
+        .button-perdu { background: rgb(202, 60, 60); }
+        .button-pas-encore { background: rgb(66, 184, 221); }
+	 span[id^="score"] {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 2px 8px;
+            border-radius: 10px;
+            margin-left: 8px;
+        }
+	button:active {
+    	transform: translateY(2px);
+    	filter: brightness(1.2);
+	}
+    </style>
 </head>
 <body>
 
-    <header class="main-header">
-        <nav class="navbar">
-            <div class="logo">
-                <h1>METRO<span>POLIS</span></h1>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#home">Accueil</a></li>
-                <li><a href="#about">À propos</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#portfolio">Projets</a></li>
-                <li><a href="#team">Équipe</a></li>
-                <li><a href="#faq">FAQ</a></li>
-                <li><a href="#contact" class="btn-nav">Contact</a></li>
-            </ul>
-            <div class="burger-menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </nav>
+    <header>
+        <h1>A3P 2025/2026 space adventure</h1>
     </header>
 
     <main>
-        <section id="home" class="hero-section">
-            <div class="container">
-                <div class="hero-content">
-                    <h2 class="hero-title">Bâtir l'avenir de l'architecture urbaine</h2>
-                    <p class="hero-subtitle">Nous concevons des espaces innovants qui redéfinissent la vie citadine du 21ème siècle.</p>
-                    <div class="hero-btns">
-                        <a href="#portfolio" class="btn btn-primary">Découvrir nos projets</a>
-                        <a href="#about" class="btn btn-secondary">En savoir plus</a>
-                    </div>
-                </div>
+        <section>
+            <h2>I.A) Auteur(s)</h2>
+            <div class="section-content">
+                <p>@yohannhesbert<br />
+		@yohann.hesbert@edu.esiee.fr
+		</p>
             </div>
         </section>
 
-        <section id="about" class="section">
-            <div class="container">
-                <div class="grid-2">
-                    <div class="about-text">
-                        <span class="badge">Qui sommes-nous ?</span>
-                        <h3>Une expertise reconnue depuis 15 ans</h3>
-                        <p>Basés au cœur de Paris, nous accompagnons les collectivités et les privés dans la transformation durable du territoire.</p>
-                        <ul class="check-list">
-                            <li>Design éco-responsable</li>
-                            <li>Respect des normes environnementales</li>
-                            <li>Innovation technologique (BIM)</li>
-                        </ul>
-                    </div>
-                    <div class="about-stats">
-                        <div class="stat-card">
-                            <h4>150+</h4>
-                            <p>Projets livrés</p>
-                        </div>
-                        <div class="stat-card">
-                            <h4>12</h4>
-                            <p>Distinctions</p>
-                        </div>
-                        <div class="stat-card">
-                            <h4>50</h4>
-                            <p>Experts dédiés</p>
-                        </div>
-                        <div class="stat-card">
-                            <h4>0</h4>
-                            <p>Retards de livraison</p>
-                        </div>
-                    </div>
-                </div>
+        <section>
+            <h2>I.B) Thème</h2>
+            <div class="section-content">
+                <p class="meta-info">Référence : Exercice 7.1.1</p>
+                <p>Un intrépide voyage intergalactique attend notre héros, prêt à tout pour retrouver sa bague de fiançailles. </p>
             </div>
         </section>
 
-        <section id="services" class="section bg-light">
-            <div class="container text-center">
-                <h3>Nos Domaines d'Expertise</h3>
-                <div class="grid-3">
-                    <div class="card-service">
-                        <div class="icon">🏗️</div>
-                        <h4>Urbanisme</h4>
-                        <p>Aménagement global de quartiers et zones d'activités.</p>
-                    </div>
-                    <div class="card-service">
-                        <div class="icon">🏠</div>
-                        <h4>Résidentiel</h4>
-                        <p>Logements collectifs et villas d'exception.</p>
-                    </div>
-                    <div class="card-service">
-                        <div class="icon">🏢</div>
-                        <h4>Tertiaire</h4>
-                        <p>Bureaux modernes et espaces de co-working.</p>
-                    </div>
-                    <div class="card-service">
-                        <div class="icon">🌿</div>
-                        <h4>Éco-conception</h4>
-                        <p>Utilisation de matériaux biosourcés et énergies propres.</p>
-                    </div>
-                    <div class="card-service">
-                        <div class="icon">🎨</div>
-                        <h4>Design d'intérieur</h4>
-                        <p>Optimisation des volumes et décoration sur-mesure.</p>
-                    </div>
-                    <div class="card-service">
-                        <div class="icon">🔍</div>
-                        <h4>Audit & Conseil</h4>
-                        <p>Analyse de faisabilité et expertise technique.</p>
-                    </div>
-                </div>
+        <section>
+            <h2>I.C) Résumé du scénario complet</h2>
+            <div class="section-content">
+                <p class="meta-info">Référence : Exercice 7.3.1</p>
+                <p>Marc est un voyageur de l’espace qui avait pour projet de demandé sa copine en mariage malheureusement il sait fait voler sa bague, il doit alors tout mettre en œuvre pour retrouver le voleur à travers l’espace. C’est alors qu’après avoir suivis la piste du voleur il se retrouve sur une nouvelle planète nommé Frilus. Il y atterrit et découvre une civilisation extraterrestre en visitant une ville de cette planète. 
+				</p>
             </div>
         </section>
 
-        <section id="portfolio" class="section">
-            <div class="container">
-                <h3 class="text-center">Nos Réalisations</h3>
-                <div class="portfolio-filters">
-                    <button class="filter-btn active">Tous</button>
-                    <button class="filter-btn">Public</button>
-                    <button class="filter-btn">Privé</button>
-                </div>
-                <div class="grid-portfolio">
-                    <article class="project-item">
-                        <div class="project-img">Image Projet 1</div>
-                        <div class="project-info">
-                            <h5>Tour Horizon</h5>
-                            <p>Paris, 2024</p>
-                        </div>
-                    </article>
-                    <article class="project-item">
-                        <div class="project-img">Image Projet 2</div>
-                        <div class="project-info">
-                            <h5>Le Loft Industriel</h5>
-                            <p>Lyon, 2023</p>
-                        </div>
-                    </article>
-                    <article class="project-item">
-                        <div class="project-img">Image Projet 3</div>
-                        <div class="project-info">
-                            <h5>Espace Culturel</h5>
-                            <p>Bordeaux, 2025</p>
-                        </div>
-                    </article>
-                    <article class="project-item">
-                        <div class="project-img">Image Projet 4</div>
-                        <div class="project-info">
-                            <h5>Éco-Quartier Marina</h5>
-                            <p>Nantes, 2022</p>
-                        </div>
-                    </article>
-                    <article class="project-item">
-                        <div class="project-img">Image Projet 5</div>
-                        <div class="project-info">
-                            <h5>Villa Solaire</h5>
-                            <p>Nice, 2024</p>
-                        </div>
-                    </article>
-                    <article class="project-item">
-                        <div class="project-img">Image Projet 6</div>
-                        <div class="project-info">
-                            <h5>Bibliothèque Nomade</h5>
-                            <p>Lille, 2023</p>
-                        </div>
-                    </article>
-                </div>
+        <section>
+            <h2>I.D) Plan complet</h2>
+            <div class="section-content">
+                <p class="meta-info">Référence : Exercice 7.3.2</p>
+                <ul>
+                    <li>Partie 1 : Projet Zuul</li>
+                    <li>Partie 2 : Réponses aux exercices</li>
+                    <li>Partie 3 : Mode d’emploi </li>
+                    <li>Partie 4 : Déclaration obligatoire anti-plagiat</li>
+                </ul>
             </div>
         </section>
 
-        <section class="section bg-dark text-white">
-            <div class="container">
-                <h3 class="text-center">Ce que nos clients disent</h3>
-                <div class="testimonial-slider">
-                    <div class="testimonial">
-                        <p>"Une équipe visionnaire qui a su transformer nos contraintes en opportunités. Un résultat au-delà de nos attentes."</p>
-                        <cite>- Jean Dupont, Maire de Villeverte</cite>
-                    </div>
-                </div>
+        <section>
+            <h2>II) Développement Technique</h2>
+            <div class="section-content">
+                <p>à remplir après le développement du jeu</p>
             </div>
         </section>
 
-        <section id="team" class="section">
-            <div class="container">
-                <h3 class="text-center">L'équipe dirigeante</h3>
-                <div class="grid-4">
-                    <div class="team-card">
-                        <div class="team-img">Photo</div>
-                        <h6>Marc Rivier</h6>
-                        <p>Architecte Associé</p>
-                    </div>
-                    <div class="team-card">
-                        <div class="team-img">Photo</div>
-                        <h6>Sarah Cohen</h6>
-                        <p>Directrice Design</p>
-                    </div>
-                    <div class="team-card">
-                        <div class="team-img">Photo</div>
-                        <h6>Paul Wagner</h6>
-                        <p>Ingénieur Structure</p>
-                    </div>
-                    <div class="team-card">
-                        <div class="team-img">Photo</div>
-                        <h6>Léa Martin</h6>
-                        <p>Urbaniste</p>
-                    </div>
-                </div>
+        <section>
+            <h2>III) Annexes & Ressources</h2>
+            <div class="section-content">
+                <p>sources potentiels?<br />
+		<a href="https://developer.mozilla.org/fr/docs/Web/CSS/Reference/Properties/font-family">- CSS</a>
+		</p>
             </div>
         </section>
-
-        <section id="faq" class="section bg-light">
-            <div class="container max-width-md">
-                <h3 class="text-center">Questions fréquentes</h3>
-                <div class="faq-list">
-                    <details>
-                        <summary>Quels sont vos délais moyens de réalisation ?</summary>
-                        <p>Cela dépend de la complexité du projet, mais comptez généralement 6 à 18 mois.</p>
-                    </details>
-                    <details>
-                        <summary>Travaillez-vous sur des projets internationaux ?</summary>
-                        <p>Oui, nous avons des bureaux partenaires en Europe et en Asie.</p>
-                    </details>
-                    <details>
-                        <summary>Proposez-vous un accompagnement administratif ?</summary>
-                        <p>Nous gérons l'intégralité des dépôts de permis de construire.</p>
-                    </details>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="section">
-            <div class="container">
-                <div class="grid-2">
-                    <div class="contact-info">
-                        <h3>Prêt à lancer votre projet ?</h3>
-                        <p>Remplissez le formulaire et recevez une réponse sous 48h.</p>
-                        <div class="contact-details">
-                            <p>📍 12 rue de la Paix, 75002 Paris</p>
-                            <p>📞 +33 1 23 45 67 89</p>
-                            <p>✉️ contact@metropolis-arch.fr</p>
-                        </div>
-                    </div>
-                    <form action="#" class="contact-form">
-                        <div class="form-group">
-                            <label for="name">Nom complet</label>
-                            <input type="text" id="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email professionnel</label>
-                            <input type="email" id="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Sujet</label>
-                            <select id="subject">
-                                <option>Developpement Urbain</option>
-                                <option>Construction Privée</option>
-                                <option>Rénovation</option>
-                            </p>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Votre message</label>
-                            <textarea id="message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary full-width">Envoyer la demande</button>
-                    </form>
-                </div>
+	<section>
+            <h2>Statistiques de mission</h2>
+            <div class="section-content" style="text-align: center;">
+                <button class="button-gagné" onclick="ajouter('score-gagné')">
+                    Gagné : <span id="score-gagné">0</span>
+                </button>
+                
+                <button class="button-perdu" onclick="ajouter('score-perdu')">
+                    Perdu : <span id="score-perdu">0</span>
+                </button>
+                
+                <button class="button-pas-encore" onclick="ajouter('score-pas-encore')">
+                    En attente : <span id="score-pas-encore">0</span>
+                </button>
             </div>
         </section>
     </main>
 
-    <footer class="main-footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h6>METROPOLIS</h6>
-                    <p>L'excellence architecturale au service des citoyens.</p>
-                </div>
-                <div class="footer-col">
-                    <h6>Liens rapides</h6>
-                    <ul>
-                        <li><a href="#">Mentions Légales</a></li>
-                        <li><a href="#">Politique de Confidentialité</a></li>
-                        <li><a href="#">Recrutement</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h6>Suivez-nous</h6>
-                    <div class="social-links">
-                        <a href="#">LinkedIn</a> | <a href="#">Instagram</a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Metropolis Architecture. Tous droits réservés.</p>
-            </div>
-        </div>
+    <footer>
+        <p style="text-align: center; margin-top: 50px; font-size: 0.8em; color: #bdc3c7;">
+            © 2026 - Projet A3P 2025/2026 space adventure
+        </p>
     </footer>
+<script>
+    // Charger les scores au démarrage
+    window.onload = function() {
+        ['score-gagné', 'score-perdu', 'score-pas-encore'].forEach(id => {
+            let sauve = localStorage.getItem(id);
+            if (sauve) document.getElementById(id).innerText = sauve;
+        });
+    };
 
+    function ajouter(idElement) {
+        let compteur = document.getElementById(idElement);
+        let nombreActuel = parseInt(compteur.innerText);
+        
+        // On crée une clé unique pour savoir si ON a déjà cliqué sur CE bouton
+        // SessionStorage s'efface quand on ferme l'onglet
+        let aDejaClique = sessionStorage.getItem('clic-' + idElement);
+
+        if (!aDejaClique) {
+            // Premier clic : on monte de 1
+            nombreActuel++;
+            sessionStorage.setItem('clic-' + idElement, 'true');
+            // Optionnel : on change le style pour montrer que c'est actif
+            document.getElementById(idElement).parentElement.style.boxShadow = "inset 0 0 10px #000";
+        } else {
+            // Deuxième clic : on redescend de 1
+            nombreActuel--;
+            sessionStorage.removeItem('clic-' + idElement);
+            document.getElementById(idElement).parentElement.style.boxShadow = "none";
+        }
+
+        // Mise à jour affichage + sauvegarde permanente
+        compteur.innerText = nombreActuel;
+        localStorage.setItem(idElement, nombreActuel);
+    }
+</script>
 </body>
 </html>
