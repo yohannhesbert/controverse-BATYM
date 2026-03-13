@@ -2,166 +2,200 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-# Auto detect text files and perform LF normalization
-* text=auto
-	<head>
-    <meta http-equiv="Content-Type" content="text/html;charset=utf8" />
-    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Site Professionnel - Structure Complète</title>
-    <link rel="stylesheet" href="style.css">
+    <title>BATYM - La Manhattanisation de Paris</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <title>La Manathanisation de Paris</title>
-    
     <style>
-       body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f4f4f9;
+        :root {
+            --primary: #2c3e50;
+            --secondary: #2980b9;
+            --accent: #e74c3c;
+            --bg: #f8f9fa;
+            --white: #ffffff;
+            --text: #333;
+            --shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
-        header {
-            border-bottom: 3px solid #2c3e50;
-            margin-bottom: 30px;
-            padding-bottom: 10px;
-        }
-        h1 {
-	color: #2c3e50;
-	}
-        h2 {
-	color: #2980b9; border-left: 5px solid #2980b9; padding-left: 10px; margin-top: 30px;
-	}
-        .section-content {
-            background: white;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        } /*c'est comme une fonction qu'on pourra rappeler plus tard pour réutiliser le style du site*/
-        .meta-info {
-		font-style: Tahoma, Geneva, Verdana, sans-serif; color: #7f8c8d;
-	}
-	button {
-    		padding: 10px 20px;
-            	border: none;
-            	cursor: pointer;
-            	font-weight: bold;
-            	margin: 5px;
-            	transition: 0.3s;
-            	color: white;
-            	border-radius: 4px;
-            	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
-	}
 
-	button:hover {
-	    opacity: 0.8; /* Le bouton devient un peu transparent quand on passe la souris dessus */
-	}
-	.button-gagné { background: rgb(28, 184, 65); }
-        .button-perdu { background: rgb(202, 60, 60); }
-        .button-pas-encore { background: rgb(66, 184, 221); }
-	 span[id^="score"] {
-            background: rgba(0, 0, 0, 0.2);
-            padding: 2px 8px;
-            border-radius: 10px;
-            margin-left: 8px;
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--bg);
+            margin: 0;
+            scroll-behavior: smooth;
         }
-	button:active {
-    	transform: translateY(2px);
-    	filter: brightness(1.2);
-	}
+
+        /* --- Navigation --- */
+        nav {
+            background: var(--white);
+            padding: 1rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: var(--shadow);
+        }
+
+        .logo { font-weight: 800; font-size: 1.5rem; color: var(--primary); }
+        .nav-links a { text-decoration: none; color: var(--text); margin-left: 20px; font-weight: 600; font-size: 0.9rem; }
+        .nav-links a:hover { color: var(--secondary); }
+
+        /* --- Header / Hero --- */
+        header {
+            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&q=80&w=1473'); /* Image suggérée : Paris Skyline */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        h1 { font-size: 3rem; margin-bottom: 10px; }
+        .subtitle { font-size: 1.2rem; opacity: 0.9; max-width: 800px; margin: 0 auto; }
+
+        /* --- Sections --- */
+        section { padding: 60px 10%; }
+        .container { max-width: 1100px; margin: 0 auto; }
+        h2 { border-left: 5px solid var(--secondary); padding-left: 15px; color: var(--primary); margin-bottom: 30px; }
+
+        /* --- Équipe --- */
+        .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; text-align: center; }
+        .member { background: var(--white); padding: 20px; border-radius: 10px; box-shadow: var(--shadow); }
+
+        /* --- Timeline --- */
+        .timeline { border-left: 2px solid var(--secondary); padding-left: 30px; position: relative; }
+        .timeline-item { margin-bottom: 40px; position: relative; }
+        .timeline-item::before { content: ''; width: 15px; height: 15px; background: var(--secondary); position: absolute; left: -39px; top: 5px; border-radius: 50%; }
+        .date { font-weight: 800; color: var(--secondary); }
+
+        /* --- Acteurs --- */
+        .actor-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .actor-card { background: white; padding: 25px; border-radius: 15px; box-shadow: var(--shadow); transition: transform 0.3s; }
+        .actor-card:hover { transform: translateY(-5px); }
+        .actor-title { font-weight: 800; margin-bottom: 10px; display: block; color: var(--secondary); }
+
+        /* --- Statistiques Interactives --- */
+        .stats-box { background: var(--primary); color: white; padding: 40px; border-radius: 20px; text-align: center; margin-top: 50px; }
+        .btn-group { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-top: 20px; }
+        button { padding: 12px 25px; border: none; border-radius: 50px; cursor: pointer; font-weight: bold; transition: 0.3s; }
+        .btn-yes { background: #2ecc71; color: white; }
+        .btn-no { background: #e74c3c; color: white; }
+        .btn-maybe { background: #f1c40f; color: black; }
+        .score-display { font-size: 1.5rem; margin-top: 20px; display: flex; justify-content: center; gap: 30px; }
+
+        footer { text-align: center; padding: 40px; background: #eee; font-size: 0.9rem; }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>BATYM</h1>
-    </header>
+<nav>
+    <div class="logo">BATYM</div>
+    <div class="nav-links">
+        <a href="#intro">Introduction</a>
+        <a href="#dates">Chronologie</a>
+        <a href="#acteurs">Acteurs</a>
+        <a href="#enjeux">Enjeux</a>
+        <a href="#equipe">L'Équipe</a>
+    </div>
+</nav>
 
-    <main>
-        <section>
-            <h2>I.A) Auteur(s)</h2>
-            <div class="section-content">
-                <p>@YohannHesbert<br />
-		@BarnabéJouanard<br />
-		@AurélienTrancart<br />
-		@MartinHernandez<br />
-		@TitouanGuerin<br />
-		</p>
-            </div>
-        </section>
+<header>
+    <h1>La Manhattanisation de Paris</h1>
+    <p class="subtitle">Analyse d'une controverse architecturale et urbaine autour du boulevard périphérique.</p>
+</header>
 
-        <section>
-            <h2>I.B) Introduction</h2>
-            <div class="section-content">
-                <p class="meta-info">Controverse</p>
-                <p>Une folle histoire attends notre équipe la BATYM concernant la Tour triangle à Paris</p>
-            </div>
-        </section>
+<div class="container">
+    
+    <section id="intro">
+        <h2>Le Contexte</h2>
+        <div class="section-content">
+            <p>On appelle « manhattanisation » l’idée de construire de nombreuses tours de grande hauteur (bureaux, hôtels, logements) en couronne autour de Paris. Ce projet divise : modernisation nécessaire pour certains, rupture identitaire et écologique pour d'autres.</p>
+            <p>Le projet phare de cette controverse est la <strong>Tour Triangle</strong>, dont l'idée a germé en 2008 sous Bertrand Delanoë.</p>
+        </div>
+    </section>
 
-        <section>
-            <h2>I.C) Résumé du scénario complet</h2>
-            <div class="section-content">
-                <p class="meta-info">Référence : Exercice 7.3.1</p>
-                <p>à Compléter
-				</p>
+    <section id="dates">
+        <h2>Dates Clés</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <span class="date">2008</span>
+                <p>Idée initiale du projet de Tour Triangle sous Bertrand Delanoë.</p>
             </div>
-        </section>
+            <div class="timeline-item">
+                <span class="date">2014 - 2015</span>
+                <p>Forte opposition politique et associative. Le projet est d'abord rejeté puis approuvé par le Conseil de Paris.</p>
+            </div>
+            <div class="timeline-item">
+                <span class="date">Fin 2021</span>
+                <p>Démarrage officiel des travaux de la Tour Triangle après des années de débats juridiques.</p>
+            </div>
+            <div class="timeline-item">
+                <span class="date">2022 - 2023</span>
+                <p>Polémique renouvelée menant à la décision de limiter la hauteur des nouveaux bâtiments dans Paris.</p>
+            </div>
+        </div>
+    </section>
 
-        <section>
-            <h2>I.D) Plan complet</h2>
-            <div class="section-content">
-                <p class="meta-info">Référence : Exercice 7.3.2</p>
-                <ul>
-                    <li>Partie 1 : Projet Zuul</li>
-                    <li>Partie 2 : Réponses aux exercices</li>
-                    <li>Partie 3 : Mode d’emploi </li>
-                    <li>Partie 4 : Déclaration obligatoire anti-plagiat</li>
-                </ul>
+    <section id="acteurs">
+        <h2>Les Acteurs du Débat</h2>
+        <div class="actor-grid">
+            <div class="actor-card">
+                <span class="actor-title">Mairie de Paris</span>
+                <p>Soutient la construction pour le renouvellement urbain, le développement économique et la création d'emplois.</p>
             </div>
-        </section>
+            <div class="actor-card">
+                <span class="actor-title">Promoteurs (URW)</span>
+                <p>Unibail-Rodamco-Westfield mise sur la rentabilité et les nouvelles surfaces tertiaires et hôtelières.</p>
+            </div>
+            <div class="actor-card">
+                <span class="actor-title">Associations & Riverains</span>
+                <p>Des groupes comme <em>Monts 14</em> dénoncent l'impact environnemental et la dégradation du paysage patrimonial.</p>
+            </div>
+            <div class="actor-card">
+                <span class="actor-title">UNESCO</span>
+                <p>Met en garde contre la multiplication des tours qui pourrait nuire à l'identité visuelle historique de Paris.</p>
+            </div>
+        </div>
+    </section>
 
-        <section>
-            <h2>II) Développement Technique</h2>
-            <div class="section-content">
-                <p>à remplir après le développement du jeu</p>
+    <section id="stats">
+        <div class="stats-box">
+            <h3>Que pensez-vous des gratte-ciels à Paris ?</h3>
+            <p>Votez pour simuler l'opinion publique sur ce projet.</p>
+            <div class="btn-group">
+                <button class="btn-yes" onclick="ajouter('score-gagné')">Favorable</button>
+                <button class="btn-no" onclick="ajouter('score-perdu')">Opposé</button>
+                <button class="btn-maybe" onclick="ajouter('score-pas-encore')">Indécis</button>
             </div>
-        </section>
+            <div class="score-display">
+                <div>👍 <span id="score-gagné">0</span></div>
+                <div>👎 <span id="score-perdu">0</span></div>
+                <div>🤔 <span id="score-pas-encore">0</span></div>
+            </div>
+        </div>
+    </section>
 
-        <section>
-            <h2>III) Annexes & Ressources</h2>
-            <div class="section-content">
-                <p>sources potentiels?<br />
-		<a href="https://developer.mozilla.org/fr/docs/Web/CSS/Reference/Properties/font-family">- CSS</a>
-		</p>
-            </div>
-        </section>
-	<section>
-            <h2>Statistiques de mission</h2>
-            <div class="section-content" style="text-align: center;">
-                <button class="button-gagné" onclick="ajouter('score-gagné')">
-                    Gagné : <span id="score-gagné">0</span>
-                </button>
-                
-                <button class="button-perdu" onclick="ajouter('score-perdu')">
-                    Perdu : <span id="score-perdu">0</span>
-                </button>
-                
-                <button class="button-pas-encore" onclick="ajouter('score-pas-encore')">
-                    En attente : <span id="score-pas-encore">0</span>
-                </button>
-            </div>
-        </section>
-    </main>
+    <section id="equipe">
+        <h2>L'Équipe BATYM</h2>
+        <div class="team-grid">
+            <div class="member"><strong>Yohann Hesbert</strong></div>
+            <div class="member"><strong>Barnabé Jouanard</strong></div>
+            <div class="member"><strong>Aurélien Trancart</strong></div>
+            <div class="member"><strong>Martin Hernandez</strong></div>
+            <div class="member"><strong>Titouan Guerin</strong></div>
+        </div>
+    </section>
+</div>
 
-    <footer>
-        <p style="text-align: center; margin-top: 50px; font-size: 0.8em; color: #bdc3c7;">
-            © 2026 - Projet A3P 2025/2026 space adventure
-        </p>
-    </footer>
+<footer>
+    <p>&copy; 2026 - Projet Cartographie des Controverses - ESIEE Paris</p>
+    <p>Sources : Document d'étude "La Manhattanisation de Paris"</p>
+</footer>
+
 <script>
-    // Charger les scores au démarrage
+    // Chargement initial des scores
     window.onload = function() {
         ['score-gagné', 'score-perdu', 'score-pas-encore'].forEach(id => {
             let sauve = localStorage.getItem(id);
@@ -173,27 +207,21 @@
         let compteur = document.getElementById(idElement);
         let nombreActuel = parseInt(compteur.innerText);
         
-        // On crée une clé unique pour savoir si ON a déjà cliqué sur CE bouton
-        // SessionStorage s'efface quand on ferme l'onglet
+        // Système de clic/déclic
         let aDejaClique = sessionStorage.getItem('clic-' + idElement);
 
         if (!aDejaClique) {
-            // Premier clic : on monte de 1
             nombreActuel++;
             sessionStorage.setItem('clic-' + idElement, 'true');
-            // Optionnel : on change le style pour montrer que c'est actif
-            document.getElementById(idElement).parentElement.style.boxShadow = "inset 0 0 10px #000";
         } else {
-            // Deuxième clic : on redescend de 1
             nombreActuel--;
             sessionStorage.removeItem('clic-' + idElement);
-            document.getElementById(idElement).parentElement.style.boxShadow = "none";
         }
 
-        // Mise à jour affichage + sauvegarde permanente
         compteur.innerText = nombreActuel;
         localStorage.setItem(idElement, nombreActuel);
     }
 </script>
+
 </body>
 </html>
