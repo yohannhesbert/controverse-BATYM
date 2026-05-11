@@ -18,6 +18,7 @@ import {
 } from 'lucide-react';
 import { clsx, type ClassValue } from 'clsx';
 import { twMerge } from 'tailwind-merge';
+import RotatingText from './components/RotatingText/RotatingText';
 
 // --- Utility for Tailwind classes ---
 function cn(...inputs: ClassValue[]) {
@@ -250,7 +251,19 @@ export default function App() {
             transition={{ duration: 1.2, delay: 0.2 }}
             className="text-7xl md:text-9xl lg:text-[12rem] font-display font-black tracking-tighter leading-[0.8] mb-12 text-gradient select-none"
           >
-            PARIS<br/><span className="text-white/5">VERTICAL?</span>
+            PARIS<br/>
+            <RotatingText
+              texts={['VERTICAL?', 'DENSE?', 'VERTE?', 'DURABLE?']}
+              mainClassName="text-white/5"
+              staggerFrom={"last"}
+              initial={{ y: "100%" }}
+              animate={{ y: 0 }}
+              exit={{ y: "-120%" }}
+              staggerDuration={0.025}
+              splitLevelClassName="overflow-hidden"
+              transition={{ type: "spring", damping: 30, stiffness: 400 }}
+              rotationInterval={2000}
+            />
           </motion.h1>
           
           <motion.p 
