@@ -295,8 +295,9 @@ export default function App() {
         <motion.div 
           animate={{ y: [0, 15, 0] }}
           transition={{ repeat: Infinity, duration: 2.5 }}
-          className="absolute bottom-12 left-1/2 -translate-x-1/2"
+          className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4"
         >
+          <span className="text-[10px] font-medium tracking-[0.3em] text-white/40 uppercase cursor-default select-none">SCROLL TO DISCOVER</span>
           <div className="w-[1px] h-20 bg-gradient-to-b from-accent/50 to-transparent" />
         </motion.div>
       </header>
