@@ -249,20 +249,20 @@ export default function App() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, delay: 0.2 }}
-            className="text-7xl md:text-9xl lg:text-[12rem] font-display font-black tracking-tighter leading-[0.8] mb-12 text-gradient select-none"
+            className="text-7xl md:text-9xl lg:text-[12rem] font-display font-black tracking-tighter leading-[0.8] mb-12 select-none flex flex-col items-center"
           >
-            PARIS<br/>
+            <span className="text-gradient block">PARIS</span>
             <RotatingText
               texts={['VERTICAL?', 'DENSE?', 'VERTE?', 'DURABLE?']}
-              mainClassName="text-white/5"
+              mainClassName="text-white/20 mt-2"
               staggerFrom={"last"}
               initial={{ y: "100%" }}
               animate={{ y: 0 }}
               exit={{ y: "-120%" }}
-              staggerDuration={0.025}
-              splitLevelClassName="overflow-hidden"
-              transition={{ type: "spring", damping: 30, stiffness: 400 }}
-              rotationInterval={2000}
+              staggerDuration={0.05}
+              splitLevelClassName="overflow-hidden pb-4 sm:pb-6 md:pb-8 pr-4"
+              transition={{ type: "spring", damping: 30, stiffness: 200 }}
+              rotationInterval={4000}
             />
           </motion.h1>
           
@@ -285,7 +285,7 @@ export default function App() {
               COMMENCER L'ANALYSE
               <ChevronRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
             </a>
-            <a href="#triangle" className="flex items-center gap-3 px-12 py-6 rounded-full font-black text-lg border border-white/10 hover:bg-white/5 text-white transition-all">
+            <a href="#triangle" className="flex items-center gap-3 px-12 py-6 rounded-full font-black text-lg border border-white/10 hover:bg-white/5 text-white transition-all z-20">
               FOCUS TRIANGLE
               <Maximize2 className="w-5 h-5 text-white/40" />
             </a>
@@ -295,10 +295,10 @@ export default function App() {
         <motion.div 
           animate={{ y: [0, 15, 0] }}
           transition={{ repeat: Infinity, duration: 2.5 }}
-          className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4"
+          className="absolute bottom-6 md:bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 z-10"
         >
-          <span className="text-[10px] font-medium tracking-[0.3em] text-white/40 uppercase cursor-default select-none">SCROLL TO DISCOVER</span>
-          <div className="w-[1px] h-20 bg-gradient-to-b from-accent/50 to-transparent" />
+          <span className="text-[10px] font-medium tracking-[0.3em] mr-[-0.3em] text-white/40 uppercase cursor-default select-none">SCROLL TO DISCOVER</span>
+          <div className="w-[1px] h-12 md:h-20 bg-gradient-to-b from-accent/50 to-transparent" />
         </motion.div>
       </header>
 
@@ -332,12 +332,11 @@ export default function App() {
             </div>
             <div className="lg:col-span-5 sticky top-32">
               <TiltImage 
-                src="https://images.unsplash.com/photo-1549144511-f099e773c147?auto=format&fit=crop&q=80&w=1000" 
+                src="/Le paysage Haussmannien face à la verticalité.webp" 
                 alt="Architecture Paris" 
                 className="aspect-[4/5] shadow-3xl"
                 caption="Le paysage Haussmannien face à la verticalité."
-              />
-              <div className="mt-12 grid grid-cols-2 gap-6">
+              />              <div className="mt-12 grid grid-cols-2 gap-6">
                 <div className="glass p-8 rounded-3xl border border-white/5">
                   <span className="text-accent font-black text-4xl block mb-2 tracking-tighter">11%</span>
                   <p className="text-[10px] text-white/30 uppercase font-black tracking-widest">Trafic intra-muros</p>
@@ -356,7 +355,7 @@ export default function App() {
           <SectionHeading subtitle="Focus Projet" id="tri-focus">La Tour Triangle</SectionHeading>
           <div className="grid lg:grid-cols-2 gap-24 items-center">
             <TiltImage 
-              src="https://images.unsplash.com/photo-1493397862567-479988817bf1?auto=format&fit=crop&q=80&w=1000" 
+              src="/tour triangle.webp" 
               alt="Tour Triangle Rendering" 
               className="aspect-video"
               caption="Rendu architectural du projet de Herzog & de Meuron."
